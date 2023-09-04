@@ -7,15 +7,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "mmascotas")
+@Table(name = "mascotas")
 public class Mascota {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String nombre;
 	private String especie;
 	private int edad;
 	private String color;
 	private String foto;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -59,8 +68,8 @@ public class Mascota {
 
 	@Override
 	public String toString() {
-		return "Mascota [nombre=" + nombre + ", especie=" + especie + ", edad=" + edad + ", color=" + color + ", foto="
-				+ foto + "]";
+		return "Mascota [id=" + id + ", nombre=" + nombre + ", especie=" + especie + ", edad=" + edad + ", color="
+				+ color + ", foto=" + foto + "]";
 	}
 
 }
